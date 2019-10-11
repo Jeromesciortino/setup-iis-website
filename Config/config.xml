@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+<physical_file_parent_dir>C:/inetpub/</physical_file_parent_dir>
+<physical_file_name>dev.nidmsdev.local</physical_file_name>
+<site_name>NIDMS Current Development</site_name>
+<hose_name>dev.nidmsdev.local</hose_name>
+<use_app_poool_identity>true</use_app_poool_identity>
+<app_pool_identity_username>eidadmin</app_pool_identity_username>
+<app_pool_identity_pass>12345678</app_pool_identity_pass>
+<cert_subject>*.nidmsdev.local</cert_subject>
+</config>
