@@ -5,7 +5,6 @@ function Read-XMLFile{
     )
 
     process{
-        $XMLFilePath
         [xml] $XmlDocument = Get-Content $XMLFilePath
 
         return $XmlDocument

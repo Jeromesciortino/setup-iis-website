@@ -1,3 +1,7 @@
+$ScriptInvocationPath = Split-Path $MyInvocation.MyCommand.Path
+
+Import-Module -Name "$ScriptInvocationPath/Validate-Step.psm1"
+
 function Step {
     param(
         [Parameter(Mandatory=$true)]
@@ -32,11 +36,12 @@ function Invoke-Step {
     process {
             "Performing $StepName : $StepDescription"
             
-            if($Validate){
-                $StepScript.Invoke()
-            }else{
-                $StepScript.Invoke()
+            if($Validate -and !(YesNoDialog "$StepName" "Are you sure you want to perform the following step? `n`n$StepName`n$StepDescription")){
+                "Step '$StepName' skipped." 
+                return;
             }
+
+            $StepScript.Invoke()
     }
 }
 
