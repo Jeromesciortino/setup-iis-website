@@ -1,4 +1,4 @@
-Function Create-PhysicalDirectory{
+Function New-PhysicalDirectory{
     param(
         [Parameter(Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
         [String] $Path
@@ -17,8 +17,6 @@ Function Create-PhysicalDirectory{
 
         $ParentPath = ""
 
-        $SplitResult[0]
-
         for ($i = 0; $i -le $SplitResult.Length - 2 ; $i++) {
             $ParentPath += $SplitResult[$i] + "/"
         }
@@ -27,4 +25,4 @@ Function Create-PhysicalDirectory{
     }
 }
 
-Export-ModuleMember -function Create-PhysicalDirectory
+Export-ModuleMember -function New-PhysicalDirectory
