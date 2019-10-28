@@ -26,10 +26,18 @@ Function Install-Certificate{
                 $CertName = $CertSearch[0].Name
 
                 "Found Certificate in $CertificateDirectory - Installing Certificate"
+                
+                $InstallResult = $null
 
-                $CertCreds = Get-Credential -Username "Enter the password below" -Message "Enter the password below"
-                $Result = Import-PfxCertificate -FilePath "$CertificateSubject/$CertName" -CertStoreLocation Cert:\LocalMachine\My -Password $CertCreds.Password -Exportable
-                $Result
+                while(!$InstallResult){
+                    $CertCreds = Get-Credential -Username "Enter the password below" -Message "Enter the password below"
+                
+                    if(!$CertCreds){
+                        return
+                    }
+                
+                    $InstallResult = Import-PfxCertificate -FilePath "$CertificateDirectory/$CertName" -CertStoreLocation Cert:\LocalMachine\My -Password $CertCreds.Password -Exportable
+                }
             }
             else{
                 "Certificate $CertificateSubject was not found in $CertificateDirectory"
