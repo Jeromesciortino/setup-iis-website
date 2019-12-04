@@ -2,7 +2,7 @@ Instructions
 
 1. Create xml file  config.xml in /Config directory.
 
-2. Paste the following, filling out a required.
+2. Paste the following, filling out as required.
 
 ```xml
 	<?xml version="1.0" encoding="UTF-8"?>
