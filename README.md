@@ -4,6 +4,7 @@ Instructions
 
 2. Paste the following, filling out a required.
 
+```xml
 	<?xml version="1.0" encoding="UTF-8"?>
 
 	<config>
@@ -23,6 +24,7 @@ Instructions
 		<cert_subject></cert_subject>
 
 	</config>
+```
 
 3. Move requires certificates in the /Certificates directory
 
